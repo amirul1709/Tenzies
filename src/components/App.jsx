@@ -20,9 +20,24 @@ export default function App() {
   //initializing state of dice
   const [diceArray, setDiceArray] = React.useState(generateAllNewDice);
 
+  //holding and highlighting individual die
+  function hold(id) {
+    setDiceArray((prevDieArray) =>
+      prevDieArray.map((dieObj) =>
+        dieObj.id === id ? { ...dieObj, isHeld: !dieObj.isHeld } : dieObj
+      )
+    );
+  }
+
   //dynamically creating the number of dice
   const diceElements = diceArray.map((dieObj) => (
-    <Die key={dieObj.id} value={dieObj.value} isHeld={dieObj.isHeld} />
+    <Die
+      key={dieObj.id}
+      id={dieObj.id}
+      value={dieObj.value}
+      isHeld={dieObj.isHeld}
+      hold={hold}
+    />
   ));
 
   //re-rolling the dice
