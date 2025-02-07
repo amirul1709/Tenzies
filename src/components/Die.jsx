@@ -1,3 +1,7 @@
 export default function Die(props) {
-  return <button>{props.value}</button>;
+  return (
+    <button className={props.isHeld ? "held-die" : undefined}>
+      {props.value}
+    </button>
+  );
 }

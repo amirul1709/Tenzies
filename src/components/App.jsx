@@ -22,7 +22,7 @@ export default function App() {
 
   //dynamically creating the number of dice
   const diceElements = diceArray.map((dieObj) => (
-    <Die key={dieObj.id} value={dieObj.value} />
+    <Die key={dieObj.id} value={dieObj.value} isHeld={dieObj.isHeld} />
   ));
 
   //re-rolling the dice
