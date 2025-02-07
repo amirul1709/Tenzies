@@ -3,6 +3,7 @@ import React from "react";
 import { nanoid } from "nanoid";
 
 export default function App() {
+  //generating an array with dice objects
   function generateAllNewDice() {
     const dice = [];
     for (let i = 0; i < 10; i++) {
@@ -16,12 +17,15 @@ export default function App() {
     return dice;
   }
 
+  //initializing state of dice
   const [diceArray, setDiceArray] = React.useState(generateAllNewDice);
 
+  //dynamically creating the number of dice
   const diceElements = diceArray.map((dieObj) => (
     <Die key={dieObj.id} value={dieObj.value} />
   ));
 
+  //re-rolling the dice
   function handleClick() {
     setDiceArray(generateAllNewDice);
   }
