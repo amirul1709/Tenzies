@@ -13,11 +13,16 @@ export default function App() {
 
   const [diceArray, setDiceArray] = React.useState(generateAllNewDice);
 
-  const diceComponent = diceArray.map((value) => <Die value={value} />);
+  const diceElements = diceArray.map((value) => <Die value={value} />);
+
+  function handleClick() {
+    setDiceArray(generateAllNewDice);
+  }
 
   return (
     <main>
-      <div className="dice-container">{diceComponent}</div>
+      <div className="dice-container">{diceElements}</div>
+      <button onClick={handleClick}>Roll</button>
     </main>
   );
 }
