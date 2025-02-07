@@ -22,7 +22,9 @@ export default function App() {
   return (
     <main>
       <div className="dice-container">{diceElements}</div>
-      <button onClick={handleClick}>Roll</button>
+      <button className="roll-button" onClick={handleClick}>
+        Roll
+      </button>
     </main>
   );
 }
