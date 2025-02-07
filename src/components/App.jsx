@@ -1,4 +1,5 @@
 import Die from "./Die";
+import React from "react";
 
 export default function App() {
   function generateAllNewDice() {
@@ -10,20 +11,13 @@ export default function App() {
     return dice;
   }
 
+  const [diceArray, setDiceArray] = React.useState(generateAllNewDice);
+
+  const diceComponent = diceArray.map((value) => <Die value={value} />);
+
   return (
     <main>
-      <div className="dice-container">
-        <Die value={2} />
-        <Die value={1} />
-        <Die value={4} />
-        <Die value={5} />
-        <Die value={3} />
-        <Die value={3} />
-        <Die value={2} />
-        <Die value={6} />
-        <Die value={5} />
-        <Die value={1} />
-      </div>
+      <div className="dice-container">{diceComponent}</div>
     </main>
   );
 }
