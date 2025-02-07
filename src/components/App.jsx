@@ -5,15 +5,15 @@ export default function App() {
   function generateAllNewDice() {
     const dice = [];
     for (let i = 0; i < 10; i++) {
-      const ranNum = Math.ceil(Math.random() * 6);
-      dice.push(ranNum);
+      const diceObj = { value: Math.ceil(Math.random() * 6), isHeld: false };
+      dice.push(diceObj);
     }
     return dice;
   }
 
   const [diceArray, setDiceArray] = React.useState(generateAllNewDice);
 
-  const diceElements = diceArray.map((value) => <Die value={value} />);
+  const diceElements = diceArray.map((obj) => <Die value={obj.value} />);
 
   function handleClick() {
     setDiceArray(generateAllNewDice);
