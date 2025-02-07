@@ -1,6 +1,6 @@
 import Die from "./Die";
 
-export default function () {
+export default function App() {
   function generateAllNewDice() {
     const dice = [];
     for (let i = 0; i < 10; i++) {
