@@ -42,7 +42,13 @@ export default function App() {
 
   //re-rolling the dice
   function handleClick() {
-    setDiceArray(generateAllNewDice);
+    setDiceArray((prevDieArray) =>
+      prevDieArray.map((dieObj) =>
+        dieObj.isHeld
+          ? dieObj
+          : { ...dieObj, value: Math.ceil(Math.random() * 6) }
+      )
+    );
   }
 
   return (
