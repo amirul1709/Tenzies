@@ -66,3 +66,15 @@ button {
 .held-die {
     background-color: #59E391;
 }
+
+.game-header {
+    text-align: center;
+}
+
+h1 {
+    margin: 5px
+}
+
+p {
+    margin: 5px
+}
