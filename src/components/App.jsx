@@ -51,6 +51,7 @@ export default function App() {
     );
   }
 
+  //checking if all dice are being held and have the same value
   let gameWon =
     diceArray.every((dieObj) => dieObj.isHeld) &&
     diceArray.every((dieObj) => dieObj.value === diceArray[0].value);
