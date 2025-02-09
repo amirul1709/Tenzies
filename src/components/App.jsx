@@ -66,6 +66,9 @@ export default function App() {
   return (
     <main>
       {gameWon && <Confetti width={width} height={height} />}
+      <div arial-live="polite" className="screenreader-only">
+        {gameWon && <p>Congrats! You won! Press New Game to play again.</p>}
+      </div>
       <div className="game-header">
         <h1>Tenzies</h1>
         <p>
