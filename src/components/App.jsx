@@ -42,15 +42,17 @@ export default function App() {
     />
   ));
 
-  //re-rolling the dice
+  //if you win the game new dice are generated, else re-rolling the dice
   function handleClick() {
-    setDiceArray((prevDieArray) =>
-      prevDieArray.map((dieObj) =>
-        dieObj.isHeld
-          ? dieObj
-          : { ...dieObj, value: Math.ceil(Math.random() * 6) }
-      )
-    );
+    gameWon
+      ? setDiceArray(generateAllNewDice)
+      : setDiceArray((prevDieArray) =>
+          prevDieArray.map((dieObj) =>
+            dieObj.isHeld
+              ? dieObj
+              : { ...dieObj, value: Math.ceil(Math.random() * 6) }
+          )
+        );
   }
 
   //checking if all dice are being held and have the same value
