@@ -1,6 +1,7 @@
 import Die from "./Die";
 import React from "react";
 import { nanoid } from "nanoid";
+import Confetti from "react-confetti";
 
 export default function App() {
   //generating an array with dice objects
@@ -58,6 +59,7 @@ export default function App() {
 
   return (
     <main>
+      {gameWon && <Confetti />}
       <div className="game-header">
         <h1>Tenzies</h1>
         <p>
