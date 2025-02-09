@@ -2,6 +2,7 @@ import Die from "./Die";
 import React from "react";
 import { nanoid } from "nanoid";
 import Confetti from "react-confetti";
+import { useWindowSize } from "react-use";
 
 export default function App() {
   //generating an array with dice objects
@@ -57,9 +58,12 @@ export default function App() {
     diceArray.every((dieObj) => dieObj.isHeld) &&
     diceArray.every((dieObj) => dieObj.value === diceArray[0].value);
 
+  //dynamic window sizing for confetti
+  const { width, height } = useWindowSize();
+
   return (
     <main>
-      {gameWon && <Confetti />}
+      {gameWon && <Confetti width={width} height={height} />}
       <div className="game-header">
         <h1>Tenzies</h1>
         <p>
