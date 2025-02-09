@@ -29,7 +29,7 @@ To set up the project locally, follow these steps:
     npm run dev
     ```
 
-4. Open your browser and navigate to `http://localhost:3000` to see the game.
+4. Open your browser and navigate to `http://localhost:port` to see the game.
 
 ## Available Scripts
 
