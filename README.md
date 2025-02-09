@@ -14,17 +14,20 @@ Tenzies is a simple dice game where the goal is to roll the dice until all of th
 To set up the project locally, follow these steps:
 
 1. Clone the repository:
+
     ```sh
     git clone <repository-url>
     cd Tenzies
     ```
 
 2. Install the dependencies:
+
     ```sh
     npm install
     ```
 
 3. Start the development server:
+
     ```sh
     npm run dev
     ```
