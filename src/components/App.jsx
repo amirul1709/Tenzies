@@ -63,6 +63,15 @@ export default function App() {
   //dynamic window sizing for confetti
   const { width, height } = useWindowSize();
 
+  //making it easier to start a new game with keyboard after winning
+  const buttonRef = React.useRef(null);
+
+  React.useEffect(() => {
+    if (gameWon) {
+      buttonRef.current.focus();
+    }
+  }, [gameWon]);
+
   return (
     <main>
       {gameWon && <Confetti width={width} height={height} />}
@@ -77,7 +86,7 @@ export default function App() {
         </p>
       </div>
       <div className="dice-container">{diceElements}</div>
-      <button className="roll-button" onClick={handleClick}>
+      <button className="roll-button" onClick={handleClick} ref={buttonRef}>
         {gameWon ? "New Game" : "Roll"}
       </button>
     </main>
