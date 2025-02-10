@@ -17,7 +17,7 @@ To set up the project locally, follow these steps:
 
     ```sh
     git clone <repository-url>
-    cd Tenzies
+    cd tenzies
     ```
 
 2. Install the dependencies:
