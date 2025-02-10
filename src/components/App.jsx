@@ -1,5 +1,5 @@
 import Die from "./Die";
-import React from "react";
+import { useState, useRef, useEffect } from "react";
 import { nanoid } from "nanoid";
 import Confetti from "react-confetti";
 import { useWindowSize } from "react-use";
@@ -20,7 +20,7 @@ export default function App() {
   }
 
   //initializing state of dice
-  const [diceArray, setDiceArray] = React.useState(generateAllNewDice);
+  const [diceArray, setDiceArray] = useState(generateAllNewDice);
 
   //holding and highlighting individual die
   function hold(id) {
@@ -64,9 +64,9 @@ export default function App() {
   const { width, height } = useWindowSize();
 
   //making it easier to start a new game with keyboard after winning
-  const buttonRef = React.useRef(null);
+  const buttonRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (gameWon) {
       buttonRef.current.focus();
     }
